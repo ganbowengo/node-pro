@@ -1,0 +1,33 @@
+<!--
+ * @Descripttion: 
+ * @Author: ganbowen
+ * @Date: 2020-07-16 14:40:24
+ * @LastEditors: ganbowen
+ * @LastEditTime: 2020-07-16 18:23:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+</head>
+
+<body>
+    <h1><%= title %> </h1>
+    <p>Fill in the below</p>
+    <form action="/msgs/post" method="post">
+        <p>
+            <input type="text" name="entry[title]" placeholder="title">
+        </p>
+        <p>
+            <textarea name="entry[body]" cols="30" rows="10"></textarea>
+        </p>
+        <p>
+            <input type="submit" value="Post">
+        </p>
+    </form>
+</body>
+
+</html>

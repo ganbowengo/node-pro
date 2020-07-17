@@ -3,7 +3,7 @@
  * @Author: ganbowen
  * @Date: 2020-07-16 17:59:57
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-16 18:23:16
+ * @LastEditTime: 2020-07-17 14:49:34
  */
 function parseField (field) {
     return field.split(/\[|\]/).filter(s => s)

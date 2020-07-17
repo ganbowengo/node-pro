@@ -1,0 +1,37 @@
+<!--
+ * @Descripttion: 
+ * @Author: ganbowen
+ * @Date: 2020-07-17 17:41:07
+ * @LastEditors: ganbowen
+ * @LastEditTime: 2020-07-17 18:17:03
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>Register</h1>
+    <% if(locals.messages) { %>
+    <% messages.forEach(message => { %>
+    <p><%= message.string %> </p>
+    <% }) %>
+    <% removeMessages() %>
+    <% } %>
+    <form action="/users/save" method="post">
+        <p>
+            姓名: <input type="text" name="user[name]" placeholder="name">
+        </p>
+        <p>
+            密码: <input type="text" name="user[pass]" placeholder="password">
+        </p>
+        <p>
+            <input type="submit" value="Sign Up">
+        </p>
+    </form>
+</body>

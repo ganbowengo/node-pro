@@ -3,13 +3,15 @@
  * @Author: ganbowen
  * @Date: 2020-06-24 15:25:57
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-16 14:47:45
+ * @LastEditTime: 2020-07-17 17:59:32
  */
+var path = require('path');
 var createError = require('http-errors');
 var express = require('express');
-var path = require('path');
+var session = require('express-session');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var messages = require('./middleware/messages');
 
 var indexRouter = require('./routes/index');
 var app = express();
@@ -21,6 +23,8 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
+app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
+app.use(messages);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

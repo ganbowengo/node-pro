@@ -3,7 +3,7 @@
  * @Author: ganbowen
  * @Date: 2020-07-16 18:28:40
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-16 18:53:53
+ * @LastEditTime: 2020-07-17 14:56:45
 -->
 
 node + express 项目
@@ -14,7 +14,9 @@ node + express + Redis 初学实现项目
 1. 全局安装 express-generator  npm install express-generator -g
 2. express [项目名称] 生成项目
 3. 使用Redis作为项目数据库
-
+    brew install redis             # 安装Redis
+    redis-server                   # 启动默认端口
+4. 调试 DEBUG=express:* node ./bin/www
 
 # Project architecture
 -- bin                             # 启动入口文件

@@ -1,0 +1,46 @@
+<!--
+ * @Descripttion: 
+ * @Author: ganbowen
+ * @Date: 2020-07-21 10:30:41
+ * @LastEditors: ganbowen
+ * @LastEditTime: 2020-07-21 11:24:50
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>upload</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+<body>
+    <h1>upload </h1>
+    <% if(locals.messages) { %>
+    <% messages.forEach(message => { %>
+    <p><%= message.string %> </p>
+    <% }) %>
+    <% removeMessages() %>
+    <% } %>
+    <form action="/upload/upload" method="post" enctype="multipart/form-data">
+        <p>
+            比较： <input type="text" name='first'> - <input type="text" name='second'> 列数据：
+        </p>
+        <p>
+            <input type="file" name='file'>
+        </p>
+        <p>
+            <input type="submit" value="上传"">
+        </p>
+    </form>
+    <% if(result) { %>
+        <p><%= result.originalname %>: </p>
+        <% result.result.forEach(item => { %>
+            <p><%= item %> </p>
+        <% }) %>
+        <% result.removeRes() %>
+    <% } %>
+</body>
+
+</html>

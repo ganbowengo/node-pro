@@ -3,18 +3,19 @@
  * @Author: ganbowen
  * @Date: 2020-06-24 15:25:57
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-17 17:59:32
+ * @LastEditTime: 2020-07-21 10:32:19
  */
-var path = require('path');
-var createError = require('http-errors');
-var express = require('express');
-var session = require('express-session');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var messages = require('./middleware/messages');
+const path = require('path');
+const createError = require('http-errors');
+const express = require('express');
+const session = require('express-session');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const messages = require('./middleware/messages');
+const loginAuth = require('./middleware/loginAuth');
 
-var indexRouter = require('./routes/index');
-var app = express();
+const indexRouter = require('./routes/index');
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +26,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(session({ secret: 'secret', resave: false, saveUninitialized: true }));
 app.use(messages);
+// app.use(loginAuth);
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);

@@ -3,7 +3,7 @@
  * @Author: ganbowen
  * @Date: 2020-07-17 15:19:53
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-17 17:24:05
+ * @LastEditTime: 2020-07-20 09:31:31
  */
 const redis = require('redis')
 const bcrypt = require('bcrypt')
@@ -57,6 +57,7 @@ class User {
         })
     }
 
+    // 校验用户名密码
     static auth (name, pass, cb) {
         User.getByName(name, (err, user) => {
             if (err) return cb(err)

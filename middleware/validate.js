@@ -3,7 +3,7 @@
  * @Author: ganbowen
  * @Date: 2020-07-16 17:59:57
  * @LastEditors: ganbowen
- * @LastEditTime: 2020-07-17 14:49:34
+ * @LastEditTime: 2020-07-20 11:05:26
  */
 function parseField (field) {
     return field.split(/\[|\]/).filter(s => s)
@@ -23,6 +23,7 @@ exports.required = field => {
         if (getFeild(req, field)) {
             next()
         } else {
+            res.error(`${field.join('.')} is required`)
             res.redirect('back')
         }
     }

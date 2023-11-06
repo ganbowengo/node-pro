@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>版式文件下载</title>
+    <link href="./css/common.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="header"></div>
+    <div class="box" id="box" style="display: none;">
+        <div class="h2" id="fplx"></div>
+        <div>
+            <table>
+                <tr>
+                    <td class="left">发票代码：</td>
+                    <td class="right" id="fpdm"></td>
+                </tr>
+                <tr>
+                    <td class="left">发票号码：</td>
+                    <td class="right" id="fphm"></td>
+                </tr>
+                <tr>
+                    <td class="left">开票日期：</td>
+                    <td class="right" id="kprq"></td>
+                </tr>
+                <tr>
+                    <td class="left">购买方：</td>
+                    <td class="right" id="gfmc"></td>
+                </tr>
+                <tr>
+                    <td class="left">购买方纳税人识别号：</td>
+                    <td class="right" id="gfsbh"></td>
+                </tr>
+                <tr>
+                    <td class="left">销售方：</td>
+                    <td class="right" id="xfmc"></td>
+                </tr>
+                <tr>
+                    <td class="left">销售方纳税人识别号：</td>
+                    <td class="right" id="xfsbh"></td>
+                </tr>
+                <tr>
+                    <td class="left">金额：</td>
+                    <td class="right"><span id="je"></span></td>
+                </tr>
+            </table>
+        </div>
+        <!--<div class="button" onclick="download('4');">预览</div> &nbsp;-->
+        <div class="button" onclick="download('5');">版式文件预览</div> &nbsp;
+        <div class="button" onclick="download('3');">OFD版式文件下载</div> &nbsp;
+        <div class="button" onclick="download('12');">PDF版式文件下载</div>
+        <!--<div class="warning-btn" onclick="warning();">错误信息展示</div>-->
+    </div>
+    <!--<div id="footer" style="display: none;">-->
+    <!--<div class="footer-item">-->
+    <!--downloadFileTest.zip-->
+    <!--</div>-->
+    <!--</div>-->
+
+    <div class="warning-box" style="display: none;">
+    </div>
+    <script src="./js/jquery.js"></script>
+    <script src="./js/common.js"></script>
+</body>
+
+</html>
